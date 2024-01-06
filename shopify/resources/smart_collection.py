@@ -4,5 +4,5 @@ import shopify
 
 
 class SmartCollection(ShopifyResource, mixins.Metafields, mixins.Events):
-    def products(self):
-        return shopify.Product.find(collection_id=self.id)
+    def products(self, **kwargs):
+        return shopify.Product.find(collection_id=self.id, **kwargs)
